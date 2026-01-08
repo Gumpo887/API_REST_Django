@@ -1,0 +1,148 @@
+{
+  "ejemplos_json": {
+    "crear_producto": {
+      "descripcion": "Crear un nuevo producto",
+      "metodo": "POST",
+      "url": "http://localhost:8000/api/productos/",
+      "body": {
+        "nombre": "Monitor Samsung 27 pulgadas",
+        "precio": 299.99,
+        "cantidad": 10
+      }
+    },
+    "crear_producto_2": {
+      "descripcion": "Otro ejemplo de crear producto",
+      "metodo": "POST",
+      "url": "http://localhost:8000/api/productos/",
+      "body": {
+        "nombre": "Auriculares Sony WH-1000XM5",
+        "precio": 349.99,
+        "cantidad": 12
+      }
+    },
+    "actualizar_producto_completo": {
+      "descripcion": "Actualizar completamente un producto (PUT)",
+      "metodo": "PUT",
+      "url": "http://localhost:8000/api/productos/1/",
+      "body": {
+        "nombre": "Laptop ASUS ROG Zephyrus",
+        "precio": 1899.99,
+        "cantidad": 2
+      }
+    },
+    "actualizar_producto_parcial_precio": {
+      "descripcion": "Actualizar solo el precio (PATCH)",
+      "metodo": "PATCH",
+      "url": "http://localhost:8000/api/productos/1/",
+      "body": {
+        "precio": 1299.99
+      }
+    },
+    "actualizar_producto_parcial_nombre": {
+      "descripcion": "Actualizar solo el nombre (PATCH)",
+      "metodo": "PATCH",
+      "url": "http://localhost:8000/api/productos/2/",
+      "body": {
+        "nombre": "Mouse Pad Corsair MM350 Pro"
+      }
+    },
+    "aumentar_cantidad": {
+      "descripcion": "Aumentar la cantidad de un producto",
+      "metodo": "POST",
+      "url": "http://localhost:8000/api/productos/1/aumentar_cantidad/",
+      "body": {
+        "cantidad": 5
+      },
+      "notas": "Se sumará 5 a la cantidad actual"
+    },
+    "disminuir_cantidad": {
+      "descripcion": "Disminuir la cantidad de un producto",
+      "metodo": "POST",
+      "url": "http://localhost:8000/api/productos/1/disminuir_cantidad/",
+      "body": {
+        "cantidad": 3
+      },
+      "notas": "Se restará 3 de la cantidad actual, mínimo 0"
+    },
+    "respuesta_listar_productos": {
+      "descripcion": "Respuesta esperada al listar productos",
+      "metodo": "GET",
+      "url": "http://localhost:8000/api/productos/",
+      "respuesta": [
+        {
+          "id": 1,
+          "nombre": "Laptop Dell XPS 13",
+          "precio": 1200.0,
+          "cantidad": 5
+        },
+        {
+          "id": 2,
+          "nombre": "Mouse Logitech MX Master 3",
+          "precio": 99.99,
+          "cantidad": 15
+        }
+      ]
+    },
+    "respuesta_obtener_producto": {
+      "descripcion": "Respuesta esperada al obtener un producto",
+      "metodo": "GET",
+      "url": "http://localhost:8000/api/productos/1/",
+      "respuesta": {
+        "id": 1,
+        "nombre": "Laptop Dell XPS 13",
+        "precio": 1200.0,
+        "cantidad": 5
+      }
+    },
+    "respuesta_crear_producto": {
+      "descripcion": "Respuesta esperada al crear un producto",
+      "metodo": "POST",
+      "url": "http://localhost:8000/api/productos/",
+      "respuesta": {
+        "id": 6,
+        "nombre": "Monitor Samsung 27 pulgadas",
+        "precio": 299.99,
+        "cantidad": 10
+      },
+      "codigo_http": 201
+    },
+    "respuesta_actualizar_producto": {
+      "descripcion": "Respuesta esperada al actualizar un producto",
+      "metodo": "PUT",
+      "url": "http://localhost:8000/api/productos/1/",
+      "respuesta": {
+        "id": 1,
+        "nombre": "Laptop Actualizada",
+        "precio": 1300.0,
+        "cantidad": 4
+      },
+      "codigo_http": 200
+    },
+    "respuesta_eliminar_producto": {
+      "descripcion": "Respuesta esperada al eliminar un producto",
+      "metodo": "DELETE",
+      "url": "http://localhost:8000/api/productos/1/",
+      "respuesta": "",
+      "codigo_http": 204
+    },
+    "respuesta_error_validacion": {
+      "descripcion": "Respuesta de error por validación",
+      "respuesta": {
+        "nombre": [
+          "This field may not be blank."
+        ],
+        "precio": [
+          "This field is required."
+        ]
+      },
+      "codigo_http": 400
+    },
+    "respuesta_error_no_encontrado": {
+      "descripcion": "Respuesta de error cuando el recurso no existe",
+      "respuesta": {
+        "detail": "Not found."
+      },
+      "codigo_http": 404
+    }
+  }
+}

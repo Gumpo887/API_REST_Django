@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "API REST Django - Gestión de Productos",
+    "description": "Colección de endpoints para probar la API REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar todos los productos",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/api/productos/"
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener un producto específico",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/api/productos/1/"
+      },
+      "response": []
+    },
+    {
+      "name": "Crear un nuevo producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8000/api/productos/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Monitor Samsung 27\",\n  \"precio\": 299.99,\n  \"cantidad\": 10\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar un producto (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8000/api/productos/1/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Laptop Actualizada\",\n  \"precio\": 1300.00,\n  \"cantidad\": 4\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualización parcial (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8000/api/productos/1/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"precio\": 1250.00\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar un producto",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8000/api/productos/1/"
+      },
+      "response": []
+    },
+    {
+      "name": "Aumentar cantidad",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8000/api/productos/1/aumentar_cantidad/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cantidad\": 5\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Disminuir cantidad",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8000/api/productos/1/disminuir_cantidad/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cantidad\": 3\n}"
+        }
+      },
+      "response": []
+    }
+  ]
+}
